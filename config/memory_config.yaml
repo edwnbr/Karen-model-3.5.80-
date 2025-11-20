@@ -1,0 +1,5 @@
+short_term_limit: 100
+long_term_limit: 1000
+episodic_limit: 50
+embedding_model: "all-MiniLM-L6-v2"
+semantic_similarity_threshold: 0.75
