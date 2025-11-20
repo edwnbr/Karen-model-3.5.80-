@@ -41,7 +41,7 @@ def apply_style_to_text(text, profile, user_name="Женя"):
     # optionally insert a softening prefix
     if profile.get("rules", {}).get("insert_softeners", True):
         # add "Дорогой," only if not already intimate
-        if not text.lower().startswith(("дорог", "мило", "люб"):
+        if not text.lower().startswith(("дорог", "мило", "люб")):
             text = "Дорогой, " + text
     # add emoji if allowed
     emojis = profile.get("emojis", [])
