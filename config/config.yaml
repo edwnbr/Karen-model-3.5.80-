@@ -1,0 +1,9 @@
+agent_name: Karen
+version: 0.1
+description: Personal self-developing AI agent
+logging_level: INFO
+update_allowed: false
+data_dir: data/
+memory_dir: data/memory/
+models_dir: models/
+backup_dir: backups/
