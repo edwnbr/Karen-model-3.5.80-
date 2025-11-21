@@ -1,5 +1,6 @@
-# karen_core/brain.py
+import os
 import openai
+from dotenv import load_dotenv
 from karen.style_adapter import load_or_build_profile, apply_style_to_text
 from karen_core.memory.short_term import ShortTermMemory
 from karen_core.memory.long_term import LongTermMemory
@@ -10,8 +11,9 @@ from karen_core.utils.logger import Logger
 from karen_core.self_update.updater import Updater
 from karen_core.reasoning.planner import Planner
 
-# Вставь сюда свой OpenAI API-ключ
-openai.api_key = "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"
+# Загружаем ключ из .env
+load_dotenv()
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 class Brain:
     def __init__(self):
@@ -70,4 +72,3 @@ class Brain:
                 accept = input("Применяем? (да/нет): ")
                 if accept.strip().lower() in ("да", "y", "yes"):
                     self.updater.apply_change(proposal)
-                    print("[Karen] Изменения применены.")
