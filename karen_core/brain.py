@@ -1,3 +1,4 @@
+# karen_core/brain.py
 import os
 import openai
 from dotenv import load_dotenv
@@ -11,9 +12,9 @@ from karen_core.utils.logger import Logger
 from karen_core.self_update.updater import Updater
 from karen_core.reasoning.planner import Planner
 
-# Загружаем ключ из .env
+# Загружаем переменные окружения из .env
 load_dotenv()
-openai.api_key = os.getenv("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")
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 class Brain:
     def __init__(self):
